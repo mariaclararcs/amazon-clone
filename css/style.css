@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap%27');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: rgb(252, 177, 190);
+    height: 100%;
+}
+
+#menu{
+    background-color: #131921;
+    display: flex;
+}
+
+.logo{
+    max-height: 100px;
+}
+
+.pesquisa{
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 30px;
+}
+
+.perfil,
+.carrinho,
+.compras{
+    padding-left: 45px;
+    padding-top: 35px;
+    color: white;
+    font-size: 18px;
+}
+
+.buscar{
+    border-radius: 10px;
+    background-color: whitesmoke;
+    width: 400px;
+    height: 36px;
+    float: left;
+    cursor: pointer;
+}
+
+.perfil:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.carrinho:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.compras:hover{
+    color: red;
+    cursor: pointer;
+}
