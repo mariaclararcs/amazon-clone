@@ -7,7 +7,6 @@
 }
 
 body{
-    background-color: rgb(252, 177, 190);
     height: 100%;
 }
 
@@ -57,4 +56,30 @@ body{
 .compras:hover{
     color: red;
     cursor: pointer;
+}
+
+#menu-dois{
+    background-color: #33455c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.submenu{
+    color: white;
+    margin-left: 20px;
+}
+
+.submenu:hover{
+    color: red;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.bx-menu{
+    color: white;
+}
+
+.fundo{
+    height: 500px;
+    width: 1349px;
 }
