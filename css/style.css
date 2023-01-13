@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap%27');
+
+:root{
+    --white: #fff;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -117,4 +122,49 @@ body{
 
 h3{
     font-weight: bold;
+}
+
+.voltar{
+    background-color: #33455c;
+    padding-left: 610px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.informacoes{
+    background-color: rgb(35, 47, 62);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.link-dois{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 16px;
+}
+
+.link-tres{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 12px;
+}
+
+ul{
+    list-style: none;
+    list-style-type: none;
+}
+
+h4{
+    color: var(--white);
+}
+
+@media (max-width: 800px){
+    #menu{
+        background-color: red;
+        display: flex;
+    }
 }
