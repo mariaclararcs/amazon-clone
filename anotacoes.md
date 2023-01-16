@@ -43,3 +43,8 @@ A configuração padrão de uma página CSS para iniciarmos o nosso projeto é:
 > body{
 >   height: 100%;
 > }
+
+### PHP
+$_POST, $_GET são variáveis super globais que são usadas no PHP
+$_POST é quando o usuário envia dados pra gente (formulário etc)
+$_GET é quando a gente recebe dados do usuário (banco de dados)

@@ -19,15 +19,15 @@ require("database.php");
         <div class="pesquisa">
             <input type="text" class="buscar" placeholder="Buscar..."/>
         </div>
-        <span class="perfil">
-            Perfil
-        </span>
-        <span class="carrinho">
+        <a class="perfil" href="login.php">
+            Entrar
+        </a>
+        <a class="carrinho">
             Carrinho
-        </span>
-        <span class="compras">
+        </a>
+        <a class="compras">
             Compras
-        </span>
+        </a>
     </div>
     <div id="menu-dois">
         <span class="submenu">

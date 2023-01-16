@@ -15,6 +15,11 @@ body{
     height: 100%;
 }
 
+a{
+    text-decoration: none;
+    list-style: none;
+}
+
 #menu{
     background-color: rgb(35, 47, 62);
     display: flex;
@@ -91,6 +96,7 @@ body{
     width: 100%;
     height: auto;
     background: url("https://m.media-amazon.com/images/I/71v3m29uraL._SX3000_.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
     display: flex;
 }
@@ -162,9 +168,7 @@ h4{
     color: var(--white);
 }
 
-@media (max-width: 800px){
-    #menu{
-        background-color: red;
-        display: flex;
-    }
+/*login*/
+#login{
+    background-color: red;
 }
