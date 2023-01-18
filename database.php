@@ -1,11 +1,11 @@
 <?php
-function connect(){
-    return new PDO(
-        "mysql:host=localhost;dbname=advocacia",
-        "root",
-        "",
-        [
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
-        ]
-    );
+$usuario = 'root';
+$senha = '';
+$database = 'advocacia';
+$host = 'localhost';
+$mysqli = new mysqli($host, $usuario, $senha, $database);
+
+if($mysqli->error){
+    die("Falha ao conectar ao banco de dados: " . $mysqli->error);
 }
+?>

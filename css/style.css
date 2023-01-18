@@ -169,6 +169,6 @@ h4{
 }
 
 /*login*/
-#login{
-    background-color: red;
+.logodois{
+    max-height: 70px;
 }

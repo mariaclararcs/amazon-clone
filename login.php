@@ -1,36 +1,28 @@
 <?php
 include("database.php");
 
-//pegando o email e a senha do formulário e filtrando eles
-$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
+if(isset($_POST['email']) || isset($_POST['password'])){
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
+    $sqlcode = "SELECT * FROM `usuarios` WHERE `email`='$email' AND `password`='$password'";
+    $sqlquery = $mysqli->query($sqlcode) or die("Falha na conexão do SQL: " . $mysqli->error);
+    $quantidade = $sqlquery->num_rows;
 
-//verificando se o campo email ou senha do formulário está vazio
-if(empty($email) || empty($password)){
-    header('Location: login.php');
-    return;
+    if($quantidade==1){
+        $usuario = $sqlquery->fetch_assoc();
+
+        if(!isset($_SESSION)){
+            session_start();
+        }
+
+        $_SESSION["nome_usuario"] = $usuario["nome_usuario"];
+        $_SESSION["id_usuario"] = $usuario["id_usuario"];
+        header("Location: test.php");
+    }else{
+        echo "Falha ao realizar o login";
+    }
 }
 
-//resgatando e verificando email do usuário com função criada no fetch.php
-$user = findBy('usuarios', 'email', $email);
-
-//verificando se não existe nada na variável user
-if(!$user){
-    header('Location: login.php');
-    return;
-}
-
-//verificando se a senha não é igual a do banco de dados
-if(!password_verify($password, $user->password)){
-    header('Location: login.php');
-    return;
-}
-
-//guardando todos os dados da variável user na variável super global $_SESSION['logged]
-$_SESSION['logged'] = $user;
-
-//redirecionando o usuário caso o email e a senha seja igual a do banco de dados
-header('Location: test.php');
 ?>
 
 <!DOCTYPE html>
