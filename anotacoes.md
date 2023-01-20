@@ -44,6 +44,11 @@ A configuração padrão de uma página CSS para iniciarmos o nosso projeto é:
 >   height: 100%;
 > }
 
+Como levar uma div inteira para o meio?
+> display: flex;
+> justify-content: center;
+> align-itens: center;
+
 ### PHP
 $_POST, $_GET são variáveis super globais que são usadas no PHP
 $_POST é quando o usuário envia dados pra gente (formulário etc)

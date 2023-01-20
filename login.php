@@ -8,21 +8,6 @@ if(isset($_POST['email']) || isset($_POST['password'])){
     $sqlquery = $mysqli->query($sqlcode) or die("Falha na conexão do SQL: " . $mysqli->error);
     $quantidade = $sqlquery->num_rows;
 
-    if($quantidade==1){
-        $usuario = $sqlquery->fetch_assoc();
-
-        if(!isset($_SESSION)){
-            session_start();
-        }
-
-        $_SESSION["nome_usuario"] = $usuario["nome_usuario"];
-        $_SESSION["id_usuario"] = $usuario["id_usuario"];
-        header("Location: test.php");
-    }else{
-        echo "Falha ao realizar o login";
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -37,14 +22,35 @@ if(isset($_POST['email']) || isset($_POST['password'])){
     <link rel="icon" href="img/icon.png" type="image/png">
 </head>
 <body>
-    <img src="img/logodois.png" class="logodois">
-    <div class="login">
-        <h3>Fazer login</h3>
-        <form method="post" action="#">
-            <input type="email" name="email" placeholder="Digite seu email">
-            <input type="password" name="password" placeholder="Digite sua senha">
-            <input type="submit" name="enviar" value="Login">
-        </form>
+    <div id="container-login">
+        <img src="img/logodois.png" class="logodois">
+        <div class="login">
+            <form method="post" action="#">
+                <h3>Fazer login</h3>
+                <b><p class="tagemail">E-mail</p></b>
+                <input type="email" name="email" placeholder="Digite seu email" class="campoemail">
+                <b><p class="tagsenha">Senha</p></b>
+                <input type="password" name="password" placeholder="Digite sua senha" class="camposenha">
+                <input type="submit" name="enviar" value="Continuar" class="btncontinuar">
+                <?php
+                    if($quantidade==1){
+                        $usuario = $sqlquery->fetch_assoc();
+                
+                        if(!isset($_SESSION)){
+                            session_start();
+                        }
+                
+                        $_SESSION["nome_usuario"] = $usuario["nome_usuario"];
+                        $_SESSION["id_usuario"] = $usuario["id_usuario"];
+                        header("Location: test.php");
+                    }else{
+                    echo "Falha ao realizar o login";
+                    }
+                }
+                ?>
+                <!--<p>Ao continuar, você concorda com as Condições de Uso e com a Política de Privacidade da Amazon.</p>-->
+            </form>
+        </div>
     </div>
 </body>
 </html>
