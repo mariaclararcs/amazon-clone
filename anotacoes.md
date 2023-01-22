@@ -53,3 +53,18 @@ Como levar uma div inteira para o meio?
 $_POST, $_GET são variáveis super globais que são usadas no PHP
 $_POST é quando o usuário envia dados pra gente (formulário etc)
 $_GET é quando a gente recebe dados do usuário (banco de dados)
+
+filter_input = serve para filtrar os dados que estão entrando no banco de dados
+Fazemos isso para evitar SQL injection (hackear o banco de dados com os próprios comandos)
+Como filtrar dados com filter_input?
+> olhar no login.php pra saber mas ou menos
+
+> foreach(VARIÁVEL QUE QUEREMOS NAVEGAR as CRIAR UMA VARIÁVEL NOVA)
+    variável que queremos navegar = array, banco de dados etc
+    criar uma variável nova = variável que vai "salvar" os dados que estamos navegando (funciona como um i do laço for)
+
+Fazendo CRUD
+
+Inserindo dados (Create)
+> $sqlcode = "INSERT INTO users(name,email,password) VALUES ('$name','$email','$password')";
+> $sqlquery = $mysqli->query($sqlcode) or die("Falha na conexão do SQL: " . $mysqli);

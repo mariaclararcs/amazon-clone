@@ -12,5 +12,6 @@ include('protect.php');
 </head>
 <body>
     login feito
+    Deseja ir ao carrinho?<a href="carrinho.php">Clique aqui</a>
 </body>
 </html>

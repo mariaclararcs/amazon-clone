@@ -1,7 +1,7 @@
 <?php
 $usuario = 'root';
 $senha = '';
-$database = 'advocacia';
+$database = 'amazon';
 $host = 'localhost';
 $mysqli = new mysqli($host, $usuario, $senha, $database);
 

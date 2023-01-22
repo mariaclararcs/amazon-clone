@@ -4,8 +4,8 @@ include("database.php");
 if(isset($_POST['email']) || isset($_POST['password'])){
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
-    $sqlcode = "SELECT * FROM `usuarios` WHERE `email`='$email' AND `password`='$password'";
-    $sqlquery = $mysqli->query($sqlcode) or die("Falha na conexão do SQL: " . $mysqli->error);
+    $sqlcode = "SELECT * FROM `users` WHERE `email`='$email' AND `password`='$password'";
+    $sqlquery = $mysqli->query($sqlcode) or die("Falha na conexão do SQL: " . $mysqli);
     $quantidade = $sqlquery->num_rows;
 
 ?>
@@ -40,8 +40,8 @@ if(isset($_POST['email']) || isset($_POST['password'])){
                             session_start();
                         }
                 
-                        $_SESSION["nome_usuario"] = $usuario["nome_usuario"];
-                        $_SESSION["id_usuario"] = $usuario["id_usuario"];
+                        $_SESSION["name"] = $usuario["name"];
+                        $_SESSION["id"] = $usuario["id"];
                         header("Location: test.php");
                     }else{
                     echo "Falha ao realizar o login";
