@@ -7,7 +7,20 @@ if(isset($_POST['email']) || isset($_POST['password'])){
     $sqlcode = "SELECT * FROM `users` WHERE `email`='$email' AND `password`='$password'";
     $sqlquery = $mysqli->query($sqlcode) or die("Falha na conexão do SQL: " . $mysqli);
     $quantidade = $sqlquery->num_rows;
+    if($quantidade==1){
+        $usuario = $sqlquery->fetch_assoc();
 
+        if(!isset($_SESSION)){
+            session_start();
+        }
+
+        $_SESSION["name"] = $usuario["name"];
+        $_SESSION["id"] = $usuario["id"];
+        header("Location: test.php");
+    }else{
+    echo "Falha ao realizar o login";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,23 +45,6 @@ if(isset($_POST['email']) || isset($_POST['password'])){
                 <b><p class="tagsenha">Senha</p></b>
                 <input type="password" name="password" placeholder="Digite sua senha" class="camposenha">
                 <input type="submit" name="enviar" value="Continuar" class="btncontinuar">
-                <?php
-                    if($quantidade==1){
-                        $usuario = $sqlquery->fetch_assoc();
-                
-                        if(!isset($_SESSION)){
-                            session_start();
-                        }
-                
-                        $_SESSION["name"] = $usuario["name"];
-                        $_SESSION["id"] = $usuario["id"];
-                        header("Location: test.php");
-                    }else{
-                    echo "Falha ao realizar o login";
-                    }
-                }
-                ?>
-                <!--<p>Ao continuar, você concorda com as Condições de Uso e com a Política de Privacidade da Amazon.</p>-->
             </form>
         </div>
     </div>

@@ -31,7 +31,7 @@ a{
 }
 
 .pesquisa{
-    padding-left: 200px;
+    padding-left: 150px;
     padding-right: 200px;
     padding-top: 30px;
     display: flex;
@@ -105,7 +105,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin: 200px 60px 20px 60px;
+    margin: 200px 60px 20px 40px;
     gap: 20px;
 }
 
@@ -113,7 +113,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin: 5px 60px 20px 60px;
+    margin: 5px 60px 20px 40px;
     gap: 20px;
 }
 
@@ -188,16 +188,16 @@ h4{
     max-height: 40px;
     margin-top: 30px;
     margin-bottom: 50px;
-    margin-left: 620px;
+    margin-left: 600px;
 }
 
 .login{
     border: 1px solid rgb(141, 141, 141);
-    margin-left: 510px;
-    margin-right: 510px;
+    margin-left: 500px;
+    margin-right: 500px;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 22px;
+    padding-left: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,7 +209,7 @@ h4{
 }
 
 .campoemail, .camposenha{
-    width: 300px;
+    width: 280px;
     height: 30px;
 }
 
@@ -221,12 +221,50 @@ h4{
 .btncontinuar{
     background-color: rgb(255, 192, 75);
     margin-top: 12px;
-    padding-left: 115px;
-    padding-right: 115px;
+    padding-left: 106px;
+    padding-right: 106px;
     padding-top: 5px;
     padding-bottom: 5px;
     border: 2px solid rgb(170, 123, 35);
     color: black;
     font-weight: bold;
     border-radius: 8px;
+}
+
+@media (max-width: 683px){
+    .pesquisa{
+        display: none;
+    }
+    #menu-dois{
+        display: none;
+    }
+    #container{
+        display: block;
+        width: 607px;
+        height: auto;
+        background: url("https://m.media-amazon.com/images/I/610SOM4wwWL._SX3000_.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #container .imagem{
+        /*margin: 200px 60px 20px 40px;*/
+        display: block;
+    }
+    .conteudo{
+        width: 120px;
+        background-color: white;
+        padding: 8px;
+        font-size: 12px;
+    }
+    .produto-img{
+        max-width: 100px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    h3{
+        font-size: 5px;
+    }
+    body{
+        height:max-content;
+    }
 }
