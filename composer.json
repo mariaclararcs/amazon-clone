@@ -1,0 +1,22 @@
+{
+    "name": "maria/amazon-clone",
+    "autoload": {
+        "files":[
+            "app/database/Connect.php",
+            "app/core/Controller.php",
+            "app/helpers/Constants.php",
+            "app/router/Router.php",
+            "app/router/Routes.php"
+        ],
+        "psr-4": {
+            "app\\": "app"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maria Clara Rocha",
+            "email": "mariaclarar981@gmail.com"
+        }
+    ],
+    "require": {}
+}
