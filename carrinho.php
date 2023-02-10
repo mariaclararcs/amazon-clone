@@ -42,11 +42,11 @@ if(isset($_GET['id'])){
 <body>
     <a href="/mycart.php">Go to cart</a>
     <ul>
-        <li>Geladeira <a href=""?id=1>Add</a> R$ 1500,00</li>
-        <li>Fogão <a href=""?id=2>Add</a> R$ 890,00</li>
-        <li>Mouse <a href=""?id=3>Add</a> R$ 64,00</li>
-        <li>Teclado <a href=""?id=4>Add</a> R$ 120,00</li>
-        <li>Monitor <a href=""?id=5>Add</a> R$ 1270,00</li>
+        <li>Geladeira <a href="?id=1">Add</a> R$ 1500,00</li>
+        <li>Fogão <a href="?id=2">Add</a> R$ 890,00</li>
+        <li>Mouse <a href="?id=3">Add</a> R$ 64,00</li>
+        <li>Teclado <a href="?id=4">Add</a> R$ 120,00</li>
+        <li>Monitor <a href="?id=5">Add</a> R$ 1270,00</li>
     </ul>
 </body>
 </html>
